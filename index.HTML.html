@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ECOJOZI</title>
+  <style>
+    :root {
+      --primary-green: #1a4d2e;  /* Dark forest green */
+      --secondary-green: #4a7856;  /* Medium eco green */
+      --accent-brown: #8d6e63;  /* Earth brown */
+      --light-beige: #fff3e0;  /* Light natural background */
+      --water-blue: #2c3e50;  /* Dark water blue */
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      line-height: 1.6;
+      background-color: #e8f5e9;  /* Light green background */
+    }
+
+    .section {
+      margin: 20px 0;
+      border: 2px solid var(--accent-brown);
+      border-radius: 8px;
+      overflow: hidden;
+      background-color: white;
+    }
+
+    .collapsible {
+      background-color: var(--secondary-green);
+      color: white;
+      cursor: pointer;
+      padding: 18px;
+      width: 100%;
+      border: none;
+      text-align: left;
+      font-size: 20px;
+      margin: 0;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .collapsible:hover {
+      background-color: var(--primary-green);
+    }
+
+    .content {
+      padding: 0 20px;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.25s ease-out;
+      background-color: var(--light-beige);
+    }
+
+    .collapsible:after {
+      content: '\25BC';
+      font-size: 16px;
+      color: white;
+      float: right;
+      margin-left: 5px;
+    }
+
+    .active:after {
+      content: '\25B2';
+    }
+
+    h1 {
+      color: var(--primary-green);
+      text-align: center;
+      margin-bottom: 35px;
+      font-size: 2.5em;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    a {
+      color: var(--water-blue);
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    a:hover {
+      text-decoration: underline;
+      color: var(--primary-green);
+    }
+
+    h3 {
+      color: var(--primary-green);
+      border-bottom: 2px solid var(--accent-brown);
+      padding-bottom: 5px;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    li {
+      margin: 10px 0;
+      padding: 8px;
+      background-color: rgba(138, 175, 147, 0.1);
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+<h1>ECOJOZI</h1>
+
+<!-- About Us Section -->
+<div class="section">
+  <button type="button" class="collapsible">About Us</button>
+  <div class="content">
+    <h3>Our Mission</h3>
+    <p>Ecoozi is a gamified simulation where players take on the role of developers building the Ecoozi app - an initiative tackling Johannesburg's waste problem through sustainable waste management and community engagement.</p>
+    <p>EcoJozi blends education, technology, and community action, turning waste into a resource and empowering players to build a cleaner, more sustainable Johannesburg!</p>
+    <h3>Our Team</h3>
+    <div class="team-list">
+      <p>Muneer Alsahli</p>
+      <p>Adan Khan</p>
+      <p>Hassan Sakka</p>
+      <p>Ryan O'Neill-Quinn</p>
+      <p>Hein Htet Aung</p>
+      <p>Joshua Dennison</p>
+      <p>Clive Nyamadzawo</p>
+    </div>
+  </div>
+</div>
+
+<!-- References Section -->
+<div class="section">
+  <button type="button" class="collapsible">References</button>
+  <div class="content">
+    <ul>
+      <li>
+        <a href="https://www.gettyimages.co.uk/photos/jukskei-river" target="_blank">
+          Jukskei River Photos - Getty Images
+        </a>
+      </li>
+      <li>
+        <a href="https://www.un.org/sustainabledevelopment/news/communications-material/" target="_blank">
+          SDG’s Communications Materials - United Nations
+        </a>
+      </li>
+      <li>
+        <a href="https://www.freepik.com/premium-vector/game-red-leaderboard-with-different-ranks-leaderboard-mobile-game-user-interface-gui-assets_157574834.htm" target="_blank">
+          Leaderboard UI Design - Freepik
+        </a>
+      </li>
+      <li>
+        <a href="https://uk.pinterest.com/pin/618893173814408917/" target="_blank">
+          Recycling Concept Image - Pinterest
+        </a>
+      </li>
+      <li>
+        <a href="https://www.dailymaverick.co.za/article/2022-07-06-waste-is-one-of-joburgs-biggest-environmental-challenges-says-councillor/" target="_blank">
+          River Pollution Article - Daily Maverick (2022)
+        </a>
+      </li>
+      <li>
+        <a href="https://www.dailymaverick.co.za/article/2020-07-13-makers-valley-johannesburg-in-the-midst-of-crisis-a-network-of-possibility/" target="_blank">
+          Johannesburg Header Image 1 - Daily Maverick (2020)
+        </a>
+      </li>
+      <li>
+        <a href="https://www.makersvalley.org.za/" target="_blank">
+          Community Header Image 2 - Makers Valley Official Site
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<!-- Contact Section -->
+<div class="section">
+  <button type="button" class="collapsible">Contact Information</button>
+  <div class="content">
+    <p>📧 Email: EcoJozi@gmail.com</p>
+    <p>📞 Phone: (+44) 7516286401</p>
+    <p>🏢 Address: Queen's University Belfast</p>
+  </div>
+</div>
+
+<script>
+  const coll = document.getElementsByClassName("collapsible");
+  for (let i = 0; i < coll.length; i++) {
+    coll[i].addEventListener("click", function() {
+      this.classList.toggle("active");
+      const content = this.nextElementSibling;
+      content.style.maxHeight = content.style.maxHeight
+        ? null
+        : content.scrollHeight + "px";
+    });
+  }
+</script>
+</body>
+</html>
